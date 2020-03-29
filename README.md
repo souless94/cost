@@ -1,5 +1,7 @@
 # Cost Analyzer
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/030f2e0e53be4f4b935cf2ce805f39be)](https://app.codacy.com/manual/souless94/cost?utm_source=github.com&utm_medium=referral&utm_content=souless94/cost&utm_campaign=Badge_Grade_Dashboard)
+
 Cost Analyzer is a free project that provide some chart based on csv inputs.
 
 ### Installation
