@@ -1,7 +1,6 @@
 from django.contrib.auth import authenticate, login , logout
 from django.contrib.auth.decorators import login_required 
 from django.views.decorators.http import require_POST
-from django.http.response import HttpResponse
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import never_cache
 from django.shortcuts import render , redirect
@@ -72,7 +71,7 @@ def logout_view(request):
         request {request} -- logout request
     
     Returns:
-        redirect -- redirects to login view 
+        redirect -- redirects to login view
     """
     logout(request)
     return redirect('/')

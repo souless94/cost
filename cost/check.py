@@ -9,9 +9,9 @@ def handle_uploaded_file(the_file,user):
     df = pd.read_csv(the_file,header=0)
     df = df.values.tolist()
 
-    for ad in range(len(df)):
-        amount = df[ad][0]
-        description = df[ad][1]
-        purchase_date = df[ad][2]
+    for ad in enumerate(df):
+        amount = ad[1][0]
+        description = ad[1][1]
+        purchase_date = ad[1][2]
         cost = Costs(amount=amount,description=description,purchase_date=purchase_date, user=user)
         cost.save() 
