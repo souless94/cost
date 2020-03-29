@@ -18,13 +18,11 @@
     <script src="{% static 'main-chart.js' %}"></script>
     <title>Costs</title>
 </head>
-
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/logout/">Logout</a>
     </nav>
-
-    <section class="form">
+    <section>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-6 form-wrapper">
@@ -41,15 +39,16 @@
         </div>
     </section>
     <hr>
-    <div class="container col-md-10 justify-content-center ">
-        <div id="main" style="width:600px;height:400px;"></div>
-    </div>
+    <section>
+        <div class="container col-md-10 justify-content-center ">
+            <div id="main" style="width:600px;height:400px;"></div>
+        </div>
+    </section>
     <style>
         .table-bordered td,
         .table-bordered th {
-            border-color:grey !important;
+            border-color: grey !important;
         }
-
     </style>
     <div class="container col-md-8 centered d-flex">
         <table class="table table-light table-sm table-bordered table-hover col-md-12">
@@ -69,7 +68,7 @@
                     <th scope="row"> {{ cost.costId }}</th>
                     <td name="cost_amount"> {{ cost.amount }}</td>
                     <td> {{ cost.description }}</td>
-                    <td name="cost_date" > {{ cost.purchase_date }}</td>
+                    <td name="cost_date"> {{ cost.purchase_date }}</td>
                     <td> {{ cost.user }}</td>
                     {% if user.is_staff %}
                     <td> <a href="{% url 'delete_cost' cost.costId %}">Delete</a></td>
