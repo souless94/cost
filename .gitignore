@@ -1,0 +1,4 @@
+.vscode/
+cost/__pycache__/
+cost/migrations/__pycache__/
+mysite/__pycache__/
