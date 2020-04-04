@@ -14,6 +14,6 @@ def handle_uploaded_file(the_file,user):
         amount = ad[1][0]
         description = ad[1][1]
         purchase_date = ad[1][2]
-        purchase_date = datetime.strptime( purchase_date,"%d/%M/%Y")
+        purchase_date = datetime.strptime( purchase_date,"%M/%d/%Y")
         cost = Costs(amount=amount,description=description,purchase_date=purchase_date, user=user)
         cost.save() 
