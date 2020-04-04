@@ -66,7 +66,7 @@
                 {% for cost in the_data %}
                 <tr>
                     <th scope="row"> {{ cost.costId }}</th>
-                    <td name="cost_amount"> {{ cost.amount }}</td>
+                    <td name="cost_amount"> $ {{ cost.amount }}</td>
                     <td> {{ cost.description }}</td>
                     <td name="cost_date"> {{ cost.purchase_date }}</td>
                     <td> {{ cost.user }}</td>
