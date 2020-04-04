@@ -50,3 +50,4 @@ Instructions on how to use them in your own application are linked below.
 ### TODO
 To do if i have spare time :
 - authorization -> users can only view their own expenses/costs
+- Mobile View -> Better Mobile viewing experience
