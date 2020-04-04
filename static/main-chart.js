@@ -9,7 +9,7 @@ $(document).ready(function () {
     var the_dates_arr = [];
 
     cost_amounts.forEach((the_cost) => {
-        cost_amounts_arr.push(parseFloat(parseFloat(the_cost.innerText).toFixed(2));
+        cost_amounts_arr.push(parseFloat(parseFloat(the_cost.innerText).toFixed(2)));
     });
     cost_dates.forEach((the_date) => {
         the_dates_arr.push(the_date.innerText);
