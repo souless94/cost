@@ -9,7 +9,7 @@ $(document).ready(function () {
     var the_dates_arr = [];
 
     cost_amounts.forEach((the_cost) => {
-        cost_amounts_arr.push(parseFloat(parseFloat(the_cost.innerText).toFixed(2)));
+        cost_amounts_arr.push(parseFloat(the_cost.innerText));
     });
     cost_dates.forEach((the_date) => {
         the_dates_arr.push(the_date.innerText);
@@ -19,6 +19,14 @@ $(document).ready(function () {
     var cost_amounts_arr_total = [...cost_amounts_arr].map((curr, i, array) => {
         return array[i] += array[i - 1] ? array[i - 1] : 0
     })
+
+    cost_amounts = cost_amounts.map(function(each_element){
+        return Number(each_element.toFixed(2));
+    });
+
+    cost_amounts_arr_total = cost_amounts_arr_total.map(function(each_element){
+        return Number(each_element.toFixed(2));
+    });
 
     var option = {
         title: {
