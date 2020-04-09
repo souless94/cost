@@ -76,6 +76,7 @@ $(document).ready(function () {
             ]
     };
 
+    document.getElementById("total").innerText = cost_amounts_arr_total[cost_amounts_arr_total.length-1];
     // use configuration item and data specified to show chart
     myChart.setOption(option);
 });

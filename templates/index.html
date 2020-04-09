@@ -26,13 +26,13 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-6 form-wrapper">
-                    <h2>Upload</h2>
+                    <h2>Upload <span id="total"></span></h2>
                     {% load crispy_forms_tags %}
                     <form method="post" action="/upload_file/" enctype=multipart/form-data>
                         {% csrf_token %}
                         {{ the_form |crispy }}
                         <br>
-                        <button class="btn btn-outline-success" type="submit">Upload</button>
+                        <button class="col-md-4 btn btn-outline-success" type="submit">Upload</button>
                     </form>
                 </div>
             </div>
