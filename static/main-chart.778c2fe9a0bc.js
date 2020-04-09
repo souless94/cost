@@ -18,9 +18,9 @@ $(document).ready(function () {
     // function to sum previous value to current value
     var cost_amounts_arr_total = [...cost_amounts_arr].map((curr, i, array) => {
         return array[i] += array[i - 1] ? array[i - 1] : 0
-    })
+    });
 
-    cost_amounts = cost_amounts.map(function(each_element){
+    cost_amounts_arr = cost_amounts_arr.map(function(each_element){
         return Number(each_element.toFixed(2));
     });
 
