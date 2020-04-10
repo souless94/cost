@@ -59,7 +59,7 @@ def delete_cost(request,costId):
         redirect -- delete the data if is valid , redirects to main page
     """
     obj = Costs.objects.get(pk=costId)
-    if obj.owner == request.user:
+    if obj.user == request.user:
         obj.delete()
     return redirect('/cost/')
 

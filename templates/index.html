@@ -73,7 +73,6 @@
                     <td name="cost_date"> {{ cost.purchase_date | date:'d-m-Y' }}</td>
                     <td> {{ cost.user }}</td>
                     <td> <a href="{% url 'delete_cost' cost.costId %}">Delete</a></td>
-                    <td></td>
                 </tr>
                 {% endfor %}
             </tbody>
