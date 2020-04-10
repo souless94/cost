@@ -1,0 +1,9 @@
+.masthead {
+    height: 100vh;
+    min-height: 500px;
+    background-image: url("../images/background.590f64d803b9.590f64d803b9.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  /* design referenced to https://startbootstrap.com/snippets/full-image-header/ */
