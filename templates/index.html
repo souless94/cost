@@ -19,30 +19,35 @@
     <!-- baidu echarts tag -->
     <script src="{% static 'echarts-en.min.js' %}"></script>
     <script src="{% static 'main-chart.js' %}"></script>
+    
+    <!-- styling -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
     <title>Cost analyzer</title>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
         <a class="navbar-brand" href="/logout/">Logout</a>
     </nav>
-    <section>
-        <br>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-6 form-wrapper">
-                    <h2>Upload <span class="float-right" >Total Spending : <span id="total"></span></span></h2>
-                    {% load crispy_forms_tags %}
-                    <form method="post" action="/upload_file/" enctype=multipart/form-data>
-                        {% csrf_token %}
-                        {{ the_form |crispy }}
-                        <br>
-                        <button class="col-md-4 btn btn-outline-success" type="submit">Upload</button>
-                    </form>
+    <header class="masthead">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 text-center">
+                    <h1 class="font-weight-light">Upload</h1>
+                    <p class="lead">Total Spending : <span id="total"></span></span></p>
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 col-lg-6 form-wrapper">
+                            {% load crispy_forms_tags %}
+                            <form method="post" action="/upload_file/" enctype=multipart/form-data>
+                                {% csrf_token %}
+                                {{ the_form |crispy }}
+                                <br>
+                                <button class="col-md-4 btn btn-outline-success" type="submit">Upload</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <hr>
+    </header>
     <div class="row justify-content-center">
         <div id="main" class="col-md-8" style="height:400px"></div>
     </div>
@@ -51,6 +56,7 @@
         .table-bordered th {
             border-color: grey !important;
         }
+
     </style>
     <div class="container col-md-8 centered d-flex">
         <table class="table table-light table-sm table-bordered table-hover col-md-12">
@@ -68,7 +74,7 @@
                 {% for cost in the_data %}
                 <tr>
                     <th scope="row"> {{ cost.costId }}</th>
-                    <td >$ <span name="cost_amount">{{ cost.amount }}</span></td>
+                    <td>$ <span name="cost_amount">{{ cost.amount }}</span></td>
                     <td> {{ cost.description }}</td>
                     <td name="cost_date"> {{ cost.purchase_date | date:'d-m-Y' }}</td>
                     <td> {{ cost.user }}</td>
