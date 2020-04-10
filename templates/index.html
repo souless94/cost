@@ -19,7 +19,7 @@
     <!-- baidu echarts tag -->
     <script src="{% static 'echarts-en.min.js' %}"></script>
     <script src="{% static 'main-chart.js' %}"></script>
-    
+
     <!-- styling -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
     <title>Cost analyzer</title>
@@ -34,17 +34,19 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12 text-center">
                     <h1 class="font-weight-light">Upload</h1>
-                    <p class="lead">Total Spending : <span id="total"></span></span></p>
+                    <p class="lead">Total Spending : <span id="total"></span></p>
                     <div class="row justify-content-center">
-                            {% load crispy_forms_tags %}
-                            <form method="post" action="/upload_file/" enctype=multipart/form-data>
-                                {% csrf_token %}
-                                {{ the_form |crispy }}
-                                <br>
-                                <button class="col-md-4 btn btn-outline-success" type="submit">Upload</button>
-                            </form>
-                        </div>
+                        {% load crispy_forms_tags %}
+                        <form method="post" action="/upload_file/" enctype=multipart/form-data>
+                            {% csrf_token %}
+                            {{ the_form |crispy }}
+                            <br>
+                            <button class="col-md-4 btn btn-outline-success" type="submit">Upload</button>
+                        </form>
                     </div>
+                </div>
+            </div>
+        </div>
     </header>
     <br>
     <div class="row justify-content-center">
