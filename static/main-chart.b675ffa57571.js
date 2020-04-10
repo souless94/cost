@@ -6,18 +6,13 @@ $(document).ready(function () {
     var cost_dates = document.getElementsByName("cost_date");
 
     var the_arr = {};
-    
-    for (var i =0 ;i ++ ; i < cost_dates.length){
+
+    for (var i =0 ; i < cost_dates.length; i++){
             the_arr[String(cost_dates[i].innerText)] = 0;
-            console.log(String(cost_dates[i].innerText));
-            console.log(the_arr);
     }
-    for (var i =0 ;i ++ ; i < cost_dates.length){
-        console.log(parseFloat(cost_amounts[i].innerText));
+    for (var i =0 ; i < cost_dates.length ; i ++ ){
         the_arr[String(cost_dates[i].innerText)] += parseFloat(cost_amounts[i].innerText);
     }
-
-    console.log(the_arr);
 
     var the_dates_arr = Object.keys(the_arr);
     var cost_amounts_arr = Object.keys(the_arr);
