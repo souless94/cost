@@ -10,7 +10,8 @@ $(document).ready(function () {
     console.log(cost_amounts);
     console.log(cost_dates);
     
-
+    console.log(cost_dates[0].innerText);
+    console.log(parseFloat(cost_amounts[0].innerText));
     for (var i =0 ;i ++ ; i < cost_amounts.length){
             the_arr[cost_dates[i].innerText] = 0;
     }
