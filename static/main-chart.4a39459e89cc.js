@@ -5,15 +5,17 @@ $(document).ready(function () {
     var cost_amounts = document.getElementsByName("cost_amount");
     var cost_dates = document.getElementsByName("cost_date");
 
-    var cost_amounts_arr = [];
-    var the_dates_arr = [];
+    var the_arr = {};
 
-    cost_amounts.forEach((the_cost) => {
-        cost_amounts_arr.push(parseFloat(the_cost.innerText));
-    });
-    cost_dates.forEach((the_date) => {
-        the_dates_arr.push(the_date.innerText);
-    });
+    for (var i =0 ;i ++ ; i < cost_amounts.length){
+            the_arr[cost_dates[i].innerText] = 0;
+    }
+    for (var i =0 ;i ++ ; i < cost_amounts.length){
+        the_arr[cost_dates[i].innerText] += parseFloat(cost_amounts[i].innerText);
+    }
+
+    var the_dates_arr = Object.keys(the_arr);
+    var cost_amounts_arr = Object.keys(the_arr);
 
     // function to sum previous value to current value
     var cost_amounts_arr_total = [...cost_amounts_arr].map((curr, i, array) => {
