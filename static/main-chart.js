@@ -17,7 +17,6 @@ $(document).ready(function () {
     var the_dates_arr = Object.keys(the_arr);
     var cost_amounts_arr = Object.keys(the_arr);
 
-
     // function to sum previous value to current value
     var cost_amounts_arr_total = [...cost_amounts_arr].map((curr, i, array) => {
         return array[i] += array[i - 1] ? array[i - 1] : 0
