@@ -24,7 +24,7 @@ def the_cost(request):
          -- main page after login
     """
     the_form = UploadCsvForm()
-    the_data = Costs.objects.order_by('purchase_date').all()
+    the_data = Costs.objects.get(username=request.user).order_by('purchase_date').all()
     context = {'the_form' : the_form, 'the_data':the_data}
     return render(request,'index.html',context)
 
