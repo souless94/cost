@@ -72,9 +72,7 @@
                     <td> {{ cost.description }}</td>
                     <td name="cost_date"> {{ cost.purchase_date | date:'d-m-Y' }}</td>
                     <td> {{ cost.user }}</td>
-                    {% if user.is_staff %}
                     <td> <a href="{% url 'delete_cost' cost.costId %}">Delete</a></td>
-                    {% else %}
                     <td></td>
                     {% endif %}
                 </tr>
