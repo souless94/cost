@@ -14,14 +14,18 @@ $(document).ready(function () {
         the_arr[String(cost_dates[i].innerText)] += parseFloat(cost_amounts[i].innerText);
     }
 
+    console.log(the_arr);
     var the_dates_arr = Object.keys(the_arr);
     var cost_amounts_arr = Object.keys(the_arr);
-
+    
+    console.log(cost_amounts_arr);
 
     // function to sum previous value to current value
     var cost_amounts_arr_total = [...cost_amounts_arr].map((curr, i, array) => {
         return array[i] += array[i - 1] ? array[i - 1] : 0
     });
+    
+    console.log(cost_amounts_arr_total);
 
     cost_amounts_arr = cost_amounts_arr.map(function(each_element){
         return Number(each_element.toFixed(2));
