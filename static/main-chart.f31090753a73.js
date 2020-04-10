@@ -6,25 +6,15 @@ $(document).ready(function () {
     var cost_dates = document.getElementsByName("cost_date");
 
     var the_arr = {};
-
-    console.log(cost_amounts);
-    console.log(cost_dates);
     
-    console.log(cost_dates[0].innerText);
-    console.log(parseFloat(cost_amounts[0].innerText));
-    for (var i =0 ;i ++ ; i < cost_amounts.length){
-            the_arr[cost_dates[i].innerText] = 0;
+    for (var i =0 ;i ++ ; i < cost_dates.length){
+            the_arr[String(cost_dates[i].innerText)] = 0;
     }
-    for (var i =0 ;i ++ ; i < cost_amounts.length){
-        the_arr[cost_dates[i].innerText] += parseFloat(cost_amounts[i].innerText);
+    for (var i =0 ;i ++ ; i < cost_dates.length){
+        the_arr[String(cost_dates[i].innerText)] += parseFloat(cost_amounts[i].innerText);
     }
-
-    console.log(the_arr);
     var the_dates_arr = Object.keys(the_arr);
     var cost_amounts_arr = Object.keys(the_arr);
-
-    console.log(the_dates_arr);
-    console.log(cost_amounts_arr);
 
     // function to sum previous value to current value
     var cost_amounts_arr_total = [...cost_amounts_arr].map((curr, i, array) => {
