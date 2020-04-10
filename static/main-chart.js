@@ -7,6 +7,10 @@ $(document).ready(function () {
 
     var the_arr = {};
 
+    console.log(cost_amounts);
+    console.log(cost_dates);
+    
+
     for (var i =0 ;i ++ ; i < cost_amounts.length){
             the_arr[cost_dates[i].innerText] = 0;
     }
@@ -14,8 +18,12 @@ $(document).ready(function () {
         the_arr[cost_dates[i].innerText] += parseFloat(cost_amounts[i].innerText);
     }
 
+    console.log(the_arr);
     var the_dates_arr = Object.keys(the_arr);
     var cost_amounts_arr = Object.keys(the_arr);
+
+    console.log(the_dates_arr);
+    console.log(cost_amounts_arr);
 
     // function to sum previous value to current value
     var cost_amounts_arr_total = [...cost_amounts_arr].map((curr, i, array) => {
