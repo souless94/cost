@@ -16,7 +16,7 @@ $(document).ready(function () {
 
     console.log(the_arr);
     var the_dates_arr = Object.keys(the_arr);
-    var cost_amounts_arr = Object.keys(the_arr);
+    var cost_amounts_arr = Object.values(the_arr);
     
     console.log(cost_amounts_arr);
 
