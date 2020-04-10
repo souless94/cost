@@ -34,7 +34,6 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12 text-center">
                     <h1 class="font-weight-light">Upload</h1>
-                    <p class="lead">Total Spending : <span id="total"></span></p>
                     <div class="row justify-content-center">
                         {% load crispy_forms_tags %}
                         <form method="post" action="/upload_file/" enctype=multipart/form-data>
@@ -44,6 +43,7 @@
                             <button class="col-md-4 btn btn-outline-success" type="submit">Upload</button>
                         </form>
                     </div>
+                    <p class="lead">Total Spending : <span id="total"></span></p>
                 </div>
             </div>
         </div>
