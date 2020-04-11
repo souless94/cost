@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import dj_database_url
+from datetime import timedelta
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -41,6 +42,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'axes',
+]
+
+AUTHENTICATION_BACKENDS = [
+    # AxesBackend should be the first backend in the AUTHENTICATION_BACKENDS list.
+    'axes.backends.AxesBackend',
+    # Django ModelBackend is the default authentication backend.
+    'django.contrib.auth.backends.ModelBackend',
 ]
 
 MIDDLEWARE = [
@@ -52,7 +61,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'axes.middleware.AxesMiddleware',
 ]
+
+
 
 ROOT_URLCONF = 'mysite.urls'
 
@@ -124,27 +136,29 @@ USE_L10N = True
 
 USE_TZ = True
 
+# configuration for axes
+AXES_ENABLED = True
+AXES_FAILURE_LIMIT = 3
+AXES_COOLOFF_TIME= timedelta(minutes=10)
+AXES_LOCK_OUT_BY_COMBINATION_USER_AND_IP = True
+AXES_LOCKOUT_TEMPLATE = 'registration/lockout.html'
 
+# login configuration
 LOGIN_URL = '' # this is the name of the url
-
 LOGOUT_REDIRECT_URL = '' # this is the name of the url
-
 LOGIN_REDIRECT_URL = 'cost' # this is the name of the url
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
 STATIC_URL = '/static/'
-
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
-
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")]
-
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+# media configuration
 MEDIA_URL = '/media/'
-
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media")
 
+#crispy form configuration
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
