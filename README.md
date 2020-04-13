@@ -32,6 +32,7 @@ Instructions on how to use them in your own application are linked below.
 
 | Tools | Link |
 | ------ | ------ |
+| Anaconda | https://www.anaconda.com/distribution/#download-section |
 | GitHub | https://github.com/ |
 | Django | https://www.djangoproject.com/ |
 | BootStrap | https://getbootstrap.com/ |
